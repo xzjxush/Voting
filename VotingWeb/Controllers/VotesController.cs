@@ -30,5 +30,6 @@ namespace VotingWeb.Controllers
 
             return Json(votes);
         }
+
     }
 }

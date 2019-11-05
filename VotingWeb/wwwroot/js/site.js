@@ -1,8 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-var app = angular.module('VotingApp', ['ui.bootstrap']);
+﻿var app = angular.module('VotingApp', ['ui.bootstrap']);
 app.run(function () { });
 
 app.controller('VotingAppController', ['$rootScope', '$scope', '$http', '$timeout', function ($rootScope, $scope, $http, $timeout) {
@@ -11,6 +7,7 @@ app.controller('VotingAppController', ['$rootScope', '$scope', '$http', '$timeou
         $http.get('api/Votes?c=' + new Date().getTime())
             .then(function (data, status) {
                 $scope.votes = data;
+              
             }, function (data, status) {
                 $scope.votes = undefined;
             });
@@ -35,3 +32,4 @@ app.controller('VotingAppController', ['$rootScope', '$scope', '$http', '$timeou
                 $scope.item = undefined;
             })
     };
+}]);
